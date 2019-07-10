@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scaleable=no">
+
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" href="css/swiper.min.css">
+		<script src="js/jquery-1.11.0.js"></script>
+		<script src="js/swiper.min.js"></script>
+		<script type="text/javascript" src="jquery.min.js"></script>
+		<script type="text/javascript" src="jquery.flipcountdown.js"></script>
+		<link rel="stylesheet" type="text/css" href="jquery.flipcountdown.css" />
+
+	</head>
+	<body>
+		<div class="header">
+			<div class="jd">京东</div>
+			<input type="search" id="search" />
+			<a href="#">登录</a>
+		</div>
+		<div class="jd_banner swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"><img class="head" src="images/swiper_1.jpg"></div>
+				<div class="swiper-slide"><img class="head" src="images/swiper_2.jpg"></div>
+				<div class="swiper-slide"><img class="head" src="images/swiper_3.jpg"></div>
+			</div>
+			<!-- 如果需要分页器 -->
+			<div class="swiper-pagination"></div>
+		</div>
+		<div class="tupiao_all swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide tupiao1 ">
+					<dl>
+						<dt><img src="images/nav0.png"></dt>
+						<dd>分类查询</dd>
+					</dl>
+					<dl>
+						<dt><img src="images/nav1.png"></dt>
+						<dd>物流查询</dd>
+					</dl>
+					<dl>
+						<dt><img src="images/nav2.png"></dt>
+						<dd>物流查询</dd>
+					</dl>
+					<dl>
+						<dt><img src="images/nav3.png"></dt>
+						<dd>物流查询</dd>
+					</dl>
+					<dl>
+						<dt><img src="images/nav4.png"></dt>
+						<dd>物流查询</dd>
+					</dl>
+					<dl>
+						<dt><img src="images/nav5.png"></dt>
+						<dd>物流查询</dd>
+					</dl>
+					<dl>
+						<dt><img src="images/nav6.png"></dt>
+						<dd>物流查询</dd>
+					</dl>
+					<dl>
+						<dt><img src="images/nav7.png"></dt>
+						<dd>物流查询</dd>
+					</dl>
+				</div>
+				<div class="tupiao2 swiper-slide">
+					<dl>
+						<dt><img src="images/nav0.png"></dt>
+						<dd>分类查询</dd>
+					</dl>
+					<dl>
+						<dt><img src="images/nav1.png"></dt>
+						<dd>物流查询</dd>
+					</dl>
+					<dl>
+						<dt><img src="images/nav2.png"></dt>
+						<dd>物流查询</dd>
+					</dl>
+					<dl>
+						<dt><img src="images/nav3.png"></dt>
+						<dd>物流查询</dd>
+					</dl>
+					<dl>
+						<dt><img src="images/nav4.png"></dt>
+						<dd>物流查询</dd>
+					</dl>
+					<dl>
+						<dt><img src="images/nav5.png"></dt>
+						<dd>物流查询</dd>
+					</dl>
+					<dl>
+						<dt><img src="images/nav6.png"></dt>
+						<dd>物流查询</dd>
+					</dl>
+					<dl>
+						<dt><img src="images/nav7.png"></dt>
+						<dd>物流查询</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="swiper-pagination fenye"></div>
+
+		</div>
+		<div class="panel">
+			<div class="p_top">
+				<span class="icon"></span>
+				<div class="timer">
+					<p class="time">掌上秒杀</p>
+					<div id="retroclockbox1"></div>
+				</div>
+				<p class="text">更多></p>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var mySwiper = new Swiper('.jd_banner', {
+				loop: true, // 循环模式选项
+
+				// 如果需要分页器
+				pagination: {
+					el: '.jd_banner .swiper-pagination',
+				},
+
+			})
+			var mySwiper = new Swiper('.tupiao_all', {
+				// loop: true, // 循环模式选项
+
+				// 如果需要分页器
+				pagination: {
+					el: '.tupiao_all .swiper-pagination',
+				},
+
+			})
+			var list = $('.tupiao1');
+			$.ajax({
+				type: "get",
+				url: "js/json.json",
+				async: true,
+				success: function(data) {
+					var arr = data.letFind;
+					console.log(arr);
+					for (var i = 0; i < arr.length; i++) {
+						console.log(list.find("dl").eq(i))
+						var dt = list.find("dl").eq(i).find("img");
+						var dd = list.find("dl").eq(i).find("dd");
+
+						dt.attr('src', arr[i].img);
+						dd.html(arr[i].find);
+					}
+
+				}
+			})
+			var list2 = $('.tupiao2');
+			$.ajax({
+				type: "get",
+				url: "js/json.json",
+				async: true,
+				success: function(data) {
+					var arr = data.letFind;
+					console.log(arr);
+					for (var i = 0; i < arr.length; i++) {
+						console.log(list2.find("dl").eq(i))
+						var dt2 = list2.find("dl").eq(i).find("img");
+						var dd2 = list2.find("dl").eq(i).find("dd");
+
+						dt2.attr('src', arr[i].img);
+						dd2.html(arr[i].find);
+					}
+
+				}
+			})
+			$(function() {
+				var NY = Math.round((new Date('1/01/2020 00:00:01')).getTime()/1000);
+				$('#retroclockbox1').flipcountdown({
+					size:"xs",
+				});
+				
+				
+			})
+		</script>
+	</body>
+</html>

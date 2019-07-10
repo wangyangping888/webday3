@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<style type="text/css">
+			html {
+				font-size: calc(100vw/7.5);
+			}
+			
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			.search-bar {
+				top: 0;
+				width: 100%;
+				height: 0.88rem;
+				display: flex;
+				position: fixed;
+				z-index: 99999;
+			}
+			
+			.search-bar.fixed {
+				background-color: #e43130;
+			}
+			
+			.search-bar>div {
+				float: left;
+			}
+			
+			.search-form {
+				width: 5.1rem;
+				padding-top: 0.14rem;
+				box-sizing: border-box;
+			}
+			
+			.search-form input {
+				width: 100%;
+				float: left;
+				height: 0.6rem;
+				border: none;
+				border-radius: 0.3rem;
+				box-sizing: border-box;
+			}
+			
+			.menu,
+			.login {
+				width: 1.2rem;
+				height: 0.88rem;
+				text-align: center;
+				line-height: 0.88rem;
+				font-size: 0.28rem;
+				color: #FFFFFF;
+				/*background-color: blue;*/
+			}
+			
+			.swiper-container img {
+				width: 100%;
+				float: left;
+			}
+			
+			.quick-nav {
+				/*background-color: yellow;*/
+				padding-bottom: 0.2rem;
+			}
+			
+			/*.quick-nav ul {
+				margin: 0;
+				padding: 0;
+			}*/
+			
+			.quick-nav ul:after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+			
+			.quick-nav ul li {
+				width: 20%;
+				float: left;
+				list-style: none;
+				text-align: center;
+			}
+			
+			.quick-nav ul li img {
+				width: 0.8rem;
+				height: 0.8rem;
+				padding-top: 0.2rem;
+			}
+			
+			.quick-nav ul li a {
+				display: block;
+				text-decoration: none;
+				font-size: 0.24rem;
+				color: #666;
+			}
+			
+			.quick-nav ul li a div {
+				padding-top: 0.12rem;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="search-bar">
+			<div class="menu">菜单</div>
+			<div class="search-form">
+				<input type="" name="" id="" value="" />
+			</div>
+			<div class="login">登录</div>
+		</div>
+
+		<!-- Swiper -->
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"><img src="images/swiper_1.jpg"></div>
+				<div class="swiper-slide"><img src="images/swiper_2.jpg"></div>
+				<div class="swiper-slide"><img src="images/swiper_3.jpg"></div>
+			</div>
+			<!-- Add Pagination -->
+			<div class="swiper-pagination"></div>
+		</div>
+
+		<div class="quick-nav">
+
+			<ul>
+				 <li>
+                    <a href="#">
+                        <img src="images/nav_1.png" alt=""/>
+                        <div>京东超市</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/nav1.png" alt=""/>
+                        <div>物流查询</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/nav2.png" alt=""/>
+                        <div>京东超市</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/nav3.png" alt=""/>
+                        <div>京东超市</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/nav4.png" alt=""/>
+                        <div>京东超市</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/nav5.png" alt=""/>
+                        <div>物流查询</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/nav6.png" alt=""/>
+                        <div>物流查询</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/nav7.png" alt=""/>
+                        <div>物流查询</div>
+                    </a>
+                </li>
+                 <li>
+                    <a href="#">
+                        <img src="images/nav0.png" alt=""/>
+                        <div>京东超市</div>
+                    </a>
+                </li>
+                 <li>
+                    <a href="#">
+                        <img src="images/nav4.png" alt=""/>
+                        <div>京东超市</div>
+                    </a>
+                </li>
+			</ul>
+
+		</div>
+
+ 		<!--京东商品大盒子-->
+        <main class="jd_main">
+            <section class="jd_product">
+                <div class="jd_product_tit no_border clearfix">
+                    <span class="sk_icon"></span>
+                    <span class="sk_name">掌上秒杀</span>
+                    <div class="sk_time">
+                        <span>0</span>
+                        <span>0</span>
+                        <span>:</span>
+                        <span>0</span>
+                        <span>0</span>
+                        <span>:</span>
+                        <span>0</span>
+                        <span>0</span>
+                    </div>
+                    <a class="sk_more" href="">更多></a>
+                </div>
+                <div class="jd_product_con">
+                    <ul class="sk_product clearfix">
+                        <li>
+                            <a href=""><img src="images/detail01.jpg" alt=""/></a>
+                            <p class="sk_now_price">&yen;10.00</p>
+                            <p class="sk_old_price">&yen;1000.00</p>
+                        </li>
+                        <li>
+                            <a href=""><img src="images/detail02.jpg" alt=""/></a>
+                            <p class="sk_now_price">&yen;10.00</p>
+                            <p class="sk_old_price">&yen;1000.00</p>
+                        </li>
+                        <li>
+                            <a href=""><img src="images/detail01.jpg" alt=""/></a>
+                            <p class="sk_now_price">&yen;10.00</p>
+                            <p class="sk_old_price">&yen;1000.00</p>
+                        </li>
+                    </ul>    
+                </div>
+            </section>
+            <section class="jd_product">
+                <div class="jd_product_tit">
+                    <h3>京东超市</h3>
+                </div>
+                <div class="jd_product_con clearfix">
+                    <a href="" class="f_left w_50 b_right"><img src="images/cp1.jpg" alt=""/></a>
+                    <a href="" class="f_right w_50 b_bottom"><img src="images/cp2.jpg" alt=""/></a>
+                    <a href="" class="f_right w_50"><img src="images/cp3.jpg" alt=""/></a>
+                </div>
+            </section>
+            <section class="jd_product">
+                <div class="jd_product_tit">
+                    <h3>京东超市</h3>
+                </div>
+                <div class="jd_product_con clearfix">
+                    <a href="" class="f_right w_50 b_left"><img src="images/cp4.jpg" alt=""/></a>
+                    <a href="" class="f_left w_50 b_bottom"><img src="images/cp5.jpg" alt=""/></a>
+                    <a href="" class="f_left w_50"><img src="images/cp6.jpg" alt=""/></a>
+                </div>
+            </section>
+            <section class="jd_product">
+                <div class="jd_product_tit">
+                    <h3>京东超市</h3>
+                </div>
+                <div class="jd_product_con clearfix">
+                    <a href="" class="f_left w_50 b_right"><img src="images/cp1.jpg" alt=""/></a>
+                    <a href="" class="f_right w_50 b_bottom"><img src="images/cp2.jpg" alt=""/></a>
+                    <a href="" class="f_right w_50"><img src="images/cp3.jpg" alt=""/></a>
+                </div>
+            </section>
+        </main>
+
+		<script type="text/javascript" src="js/swiper.min.js"></script>
+		<script type="text/javascript">
+			var searchBar = document.querySelector(".search-bar");
+
+			var swiper = new Swiper('.swiper-container', {
+				pagination: {
+					el: '.swiper-pagination',
+				},
+			});
+
+			window.addEventListener('scroll', function() {
+				var t = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+
+				if(t > 50) {
+					searchBar.setAttribute("class", "search-bar fixed");
+				} else {
+					searchBar.setAttribute("class", "search-bar");
+				}
+
+			});
+		</script>
+	</body>
+
+</html>

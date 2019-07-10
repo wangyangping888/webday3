@@ -1,0 +1,122 @@
+html{
+	font-size:calc(100vw/7.5);
+	font-family: "微软雅黑";
+}
+*{
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+	
+}
+p{
+	padding: 0;
+	margin: 0;
+}
+.jd{
+	display: inline-block;
+	margin: 0.1rem;
+	color: white;
+	font-size: 0.16rem;
+}
+.header{
+	display: flex;
+	flex-wrap:nowrap;
+	justify-content: space-between;
+	background-color: red;
+}
+#search{
+	flex: 1;
+	margin: 0.05rem 0;
+	border: none;
+	border-radius: 17px;
+}
+.header a{
+	display: inline-block;
+	margin: 0.1rem;
+	color: white;
+	font-size: 0.16rem;
+}
+.swiper-container img.head {width: 100%;}
+.tupiao1 dl{
+	width: 25%;
+	margin-top: 0.2rem;
+}
+.tupiao1{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	font-size: 0.16rem;
+}
+.tupiao1 dl{
+	text-align: center;
+}
+.tupiao1 dl dt img{
+	width: 40%;
+}
+.tupiao1{
+	margin: 0.1rem 0 0.6rem 0;
+}
+.tupiao2 dl{
+	width: 25%;
+	margin-top: 0.2rem;
+}
+.tupiao2{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	font-size: 0.16rem;
+}
+.tupiao2 dl{
+	text-align: center;
+}
+.tupiao2 dl dt img{
+	width: 40%;
+}
+.tupiao2{
+	margin: 0.1rem 0 0.6rem 0;
+}
+.tupiao_all{
+	border: 1px solid #e0e0e0;
+}
+span.icon{
+	background-image: url(../images/seckill-icon.png);
+	background-repeat:no-repeat;
+	background-size: 0.16rem 0.2rem;
+    height: 0.2rem;
+    width: 0.16rem;
+    float: left;
+    margin-left: 0.08rem;
+    margin-top: 0.06rem;
+}
+.panel{
+	width: 90%;
+	background-color: white;
+	border: 1px solid #e0e0e0;
+	margin: 0.1rem auto;
+}
+p.text{
+	font-size:0.16rem;
+	
+}
+.p_top{
+	width: 95%;
+	margin: 0.05rem auto;
+	height: 0.3rem;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+p.time{
+	font-size: 0.16rem;
+	
+	margin-left: 0.08rem;
+	color: red;
+	margin-top: 0.05rem;
+	
+}
+.timer{
+		flex: 1;
+}
+#retroclockbox1{
+	background-color: red;
+}

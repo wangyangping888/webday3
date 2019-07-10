@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JD首页</title>
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/jd_index.css"/>
+	</head>
+	<body>
+		<div class="jd_layout">
+			<div class="jd_search">
+				<span class="jd_logo">
+					京东
+				</span>
+				<input type="search" name="search" id="search" placeholder="" value="" />
+				<a href="#">登录</a>
+			</div>
+			<div class="jd_banner swiper-container">
+			 	<div class="swiper-wrapper">
+					<img class="swiper-slide" src="images/swiper_1.jpg" />
+					<img class="swiper-slide" src="images/swiper_2.jpg" />
+					<img class="swiper-slide" src="images/swiper_3.jpg" />
+				</div>
+				<!-- 如果需要分页器 -->
+    			<div class="swiper-pagination"></div>
+			</div>
+		</div>
+		
+		<script src="js/jquery-1.11.0.js" type="text/javascript"></script>
+		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var swpier = new Swiper(".swiper-container",{
+				loop:true,
+				autoplay:true,
+				pagination: {
+			      el: '.swiper-pagination',
+			    },
+			})
+		</script>
+	</body>
+</html>
