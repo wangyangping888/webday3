@@ -108,10 +108,29 @@
 				<span class="icon"></span>
 				<div class="timer">
 					<p class="time">掌上秒杀</p>
-					<div id="retroclockbox1"></div>
+					<div id="retroclockbox1">
+						
+					</div>
 				</div>
 				<p class="text">更多></p>
 			</div>
+			<!-- <div class="image">
+				<div class="i_left">
+					<img src="images/detail01.jpg" />
+					<p class="text1"></p>
+					<p class="remove1"></p>
+				</div>
+				<div class="i_center">
+					<img src="images/detail02.jpg" />
+					<p class="text1"></p>
+					<p class="remove1"></p>
+				</div>
+				<div class="i_left">
+					<img src="images/detail01.jpg" />
+					<p class="text1"></p>
+					<p class="remove1"></p>
+				</div>
+			</div> -->
 		</div>
 		<script type="text/javascript">
 			var mySwiper = new Swiper('.jd_banner', {
@@ -170,14 +189,24 @@
 
 				}
 			})
-			$(function() {
-				var NY = Math.round((new Date('1/01/2020 00:00:01')).getTime()/1000);
-				$('#retroclockbox1').flipcountdown({
-					size:"xs",
+			$(function(){
+					var NY = Math.round((new Date('1/01/2020 00:00:01')).getTime()/1000);
+					$('#retroclockbox1').flipcountdown({
+						size:"xs",   //p.s. 改变插件大小的 xs sm md lg//
+						tick:function(){
+							var nol = function(h){
+								return h>9?h:'0'+h;
+							}
+							var	range  	= NY-Math.round((new Date()).getTime()/1000),
+								secday = 86400, sechour = 3600,
+								days 	= parseInt(range/secday),
+								hours	= parseInt((range%secday)/sechour),
+								min		= parseInt(((range%secday)%sechour)/60),
+								sec		= ((range%secday)%sechour)%60;
+							return nol(days)+' '+nol(hours)+' '+nol(min)+' '+nol(sec);
+						}
+					});
 				});
-				
-				
-			})
 		</script>
 	</body>
 </html>

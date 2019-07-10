@@ -96,6 +96,7 @@ span.icon{
 }
 p.text{
 	font-size:0.16rem;
+	margin-top:0.05rem ;
 	
 }
 .p_top{
@@ -116,7 +117,24 @@ p.time{
 }
 .timer{
 		flex: 1;
+		display: flex;
+		wrap-flex: nowrap;
+		
+		
 }
 #retroclockbox1{
-	background-color: red;
+	width: 50%;
+	height: 100%;
+	margin-left:0.1rem ;
+	font-size: 0.16rem;
+	margin-top: 0.05rem;
+}
+.i_left img{
+	width: 35%;
+}
+.i_center img{
+	width: 35%;
+}
+.i_right img{
+	width: 35%;
 }
