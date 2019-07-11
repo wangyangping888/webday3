@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scaleable=no">
+		<title></title>
+	</head>
+	<body>
+		<style type="text/css">
+			html{
+				font-size:calc(100vw/7.5);
+				height: 100%;
+			}
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.category {
+				height:9rem;
+				width: 100%;
+				padding: 0.9rem 0 1rem;
+				box-sizing: border-box;
+				display: flex;
+			}
+			
+			.category .contain {
+				width: 85px;
+				height: 100%;
+				overflow: hidden;
+				position: relative;
+			}
+			
+			.contain ul {
+				width: 100%;
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			
+			.contain ul li {
+				text-align: center;
+				line-height: 0.92rem;
+				font-size: 0.28rem;
+				border-bottom: solid 1px #aaa;
+			}
+			
+			.contain ul li a {
+				text-decoration: none;
+				color: #333;
+			}
+			
+			.main {
+				flex: 1;
+				background-color: red;
+			}
+			.footer {
+				width: 100%;
+				height: 1rem;
+				position: fixed;
+				background-color: blue;
+				bottom: 0;
+			}
+			.header {
+				width: 100%;
+				height: 1rem;
+				position: fixed;
+				background-color: blue;
+				top: 0;
+				z-index: 999;
+			}
+			.transition{
+				-webkit-transition: top 0.3s linear ;
+			}
+		</style>
+		<div class="header"></div>
+		<div class="category">
+			<div class="contain">
+				<ul class="">
+					<li>菜单一</li>
+					<li>菜单2</li>
+					<li>菜单3</li>
+					<li>菜单4</li>
+					<li>菜单5</li>
+					<li>菜单6</li>
+					<li>菜单7</li>
+					<li>菜单8</li>
+					<li>菜单9</li>
+					<li>菜单3</li>
+					<li>菜单4</li>
+					<li>菜单5</li>
+					<li>菜单6</li>
+					<li>菜单7</li>
+					<li>菜单8</li>
+					<li>菜单3</li>
+					<li>菜单4</li>
+					<li>菜单5</li>
+					<li>菜单6</li>
+					<li>菜单7</li>
+				</ul>
+			</div>
+			<div class="main"></div>
+		</div>
+		<div class="footer"></div>
+		<script type="text/javascript">
+			var box=document.querySelector(".contain");
+			var box1=document.querySelector(".contain ul");
+			var limitTop = box.offsetHeight - box1.offsetHeight - 150;
+			var startY=0;
+			var offsetTop=0;
+			box.ontouchstart=function(e){
+				startY=e.changedTouches[0].clientY;
+			}
+			box.ontouchmove=function(e){
+				var y=e.changedTouches[0].clientY;
+				var tmp=offsetTop + y - startY;
+				tmp=tmp>150?150:tmp;
+				tmp=tmp<limitTop?limitTop:tmp;
+				box1.style.top=tmp+"px";
+				
+			}
+			box.ontouchend=function(e){
+				var y=e.changedTouches[0].clientY;
+				var tmp=offsetTop + y - startY;
+				tmp=tmp>0?0:tmp;
+				tmp=tmp<(limitTop+150)?(limitTop+150):tmp;
+				offsetTop=tmp;
+				box1.style.top=offsetTop+"px";
+				box1.className="transition";
+			}
+			box.ontouchcancel=function(e){
+				console.log("触摸取消");
+			}
+		</script>
+	</body>
+</html>
